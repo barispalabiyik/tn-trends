@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticketnetwork Trends</title>
+    <meta author="Baris Palabiyik" />
+    <meta
+      name="keywords"
+      content="Google Trends Ticketnetwork, Ticketnetwork Keyword Analysis, Ticketnetwork Marketing"
+    />
+    <meta
+      name="description"
+      content="Ticketnetwork Trends Tracker for Google Trends"
+    />
+    <link rel="icon" href="/public/favicon.ico" type="x-icon" />
+    <style>
+      :root {
+        --color-primary: #0077ff;
+      }
+      /* width */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: var(--color-primary);
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: lightgray;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: lightblue;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+        text-align: center;
+      }
+      body {
+        background-color: var(--color-primary);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+        padding: 0;
+        overflow-x: hidden;
+        padding-bottom: 10px;
+      }
+      h1 {
+        color: white;
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      h2 {
+        margin-bottom: 20px;
+      }
+      img {
+        max-width: 250px;
+      }
+      @media screen and (max-width: 640px) {
+        .embed-container .embed-header {
+          max-height: none;
+          min-height: 113px !important;
+        }
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 30px;
+        box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        background: white;
+        background-image: url("public/img/tn-bg.png");
+      }
+      .grids {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+      }
+      section {
+        height: 100%;
+        width: 100%;
+      }
+      @media (max-width: 768px) {
+        .grids {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script
+      type="text/javascript"
+      src="https://ssl.gstatic.com/trends_nrtr/3197_RC01/embed_loader.js"
+    ></script>
+    <script>
+      let keyword = "tickets";
+    </script>
+    <img src="public/img/tn-logo.png" alt="Ticketnetwork Logosu" />
+    <h1>Ticketnetwork Trend Tracker</h1>
+    <div class="container">
+      <div class="grids">
+        <section>
+          <h2>Trending in 1H</h2>
+          <script type="text/javascript">
+            trends.embed.renderExploreWidget(
+              "RELATED_QUERIES",
+              {
+                comparisonItem: [
+                  { keyword: `${keyword}`, geo: "US", time: "now 1-H" },
+                ],
+                category: 569,
+                property: "",
+              },
+              {
+                exploreQuery: `cat=569&date=now%201-H&geo=US&q=${keyword}`,
+                guestPath: "https://trends.google.com:443/trends/embed/",
+              }
+            );
+          </script>
+        </section>
+
+        <section>
+          <h2>Trending in 4H</h2>
+          <script type="text/javascript">
+            trends.embed.renderExploreWidget(
+              "RELATED_QUERIES",
+              {
+                comparisonItem: [
+                  { keyword: `${keyword}`, geo: "US", time: "now 4-H" },
+                ],
+                category: 569,
+                property: "",
+              },
+              {
+                exploreQuery: `cat=569&date=now%204-H&geo=US&q=${keyword}`,
+                guestPath: "https://trends.google.com:443/trends/embed/",
+              }
+            );
+          </script>
+        </section>
+        <section>
+          <h2>Trending in Last Day</h2>
+          <script type="text/javascript">
+            trends.embed.renderExploreWidget(
+              "RELATED_TOPICS",
+              {
+                comparisonItem: [
+                  { keyword: `${keyword}`, geo: "US", time: "now 1-d" },
+                ],
+                category: 569,
+                property: "",
+              },
+              {
+                exploreQuery: `cat=569&date=now%201-d&geo=US&q=${keyword}`,
+                guestPath: "https://trends.google.com:443/trends/embed/",
+              }
+            );
+          </script>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
