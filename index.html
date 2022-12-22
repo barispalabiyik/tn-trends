@@ -16,9 +16,11 @@
     />
     <link rel="icon" href="public/favicon.ico" type="x-icon" />
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
       :root {
         --color-primary: #0077ff;
       }
+
       /* width */
       ::-webkit-scrollbar {
         width: 10px;
@@ -38,13 +40,15 @@
       ::-webkit-scrollbar-thumb:hover {
         background: lightblue;
       }
+
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Roboto", sans-serif;
+        font-family: "Montserrat", sans-serif;
         text-align: center;
       }
+
       body {
         background-color: var(--color-primary);
         display: flex;
@@ -55,23 +59,28 @@
         overflow-x: hidden;
         padding-bottom: 10px;
       }
+
       h1 {
         color: white;
         font-size: 2rem;
         margin-bottom: 20px;
       }
+
       h2 {
         margin-bottom: 20px;
       }
+
       img {
         max-width: 250px;
       }
+
       @media screen and (max-width: 640px) {
         .embed-container .embed-header {
           max-height: none;
           min-height: 113px !important;
         }
       }
+
       .container {
         max-width: 900px;
         margin: 0 auto;
@@ -81,15 +90,18 @@
         background: white;
         background-image: url("public/img/tn-bg.png");
       }
+
       .grids {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-gap: 1rem;
       }
+
       section {
         height: 100%;
         width: 100%;
       }
+
       @media (max-width: 768px) {
         .grids {
           grid-template-columns: repeat(1, 1fr);
@@ -97,6 +109,7 @@
       }
     </style>
   </head>
+
   <body>
     <script
       type="text/javascript"
@@ -152,16 +165,35 @@
           <h2>Trending in Last Day</h2>
           <script type="text/javascript">
             trends.embed.renderExploreWidget(
-              "RELATED_TOPICS",
+              "RELATED_QUERIES",
               {
                 comparisonItem: [
-                  { keyword: `${keyword}`, geo: "US", time: "now 1-d" },
+                  { keyword: "tickets", geo: "US", time: "now 1-d" },
                 ],
                 category: 569,
                 property: "",
               },
               {
-                exploreQuery: `cat=569&date=now%201-d&geo=US&q=${keyword}`,
+                exploreQuery: "cat=569&date=now%201-d&geo=US&q=tickets",
+                guestPath: "https://trends.google.com:443/trends/embed/",
+              }
+            );
+          </script>
+        </section>
+        <section>
+          <h2>Trending in Last Week</h2>
+          <script type="text/javascript">
+            trends.embed.renderExploreWidget(
+              "RELATED_QUERIES",
+              {
+                comparisonItem: [
+                  { keyword: "tickets", geo: "US", time: "now 7-d" },
+                ],
+                category: 569,
+                property: "",
+              },
+              {
+                exploreQuery: "cat=569&date=now%207-d&geo=US&q=tickets",
                 guestPath: "https://trends.google.com:443/trends/embed/",
               }
             );
